@@ -18,7 +18,7 @@ class DatosPersona : AppCompatActivity() {
         var et_password = findViewById(R.id.et_password1) as EditText
         var btn_reset = findViewById(R.id.btn_reset1) as Button
         var btn_submit = findViewById(R.id.btn_submit1) as Button
-
+        var pers = Persona();
         btn_reset.setOnClickListener {
             // clearing user_name and password edit text views on reset button click
 
@@ -31,21 +31,25 @@ class DatosPersona : AppCompatActivity() {
             val user_id =et_user_id.text
             val user_name = et_user_name.text;
             val password = et_password.text;
+
             //Toast.makeText(this@LoginExample, user_name, Toast.LENGTH_LONG).show()
 
             val bundle = intent.extras
 
-                val pers = bundle?.getSerializable("Person1") as Persona
 
-            //Actualizamos o Insertamos los datos
-                pers.nombre=user_name.toString()
-                pers.user=user_id.toString()
-                pers.password=password.toString()
 
                 val editar = bundle?.getBoolean("accion") as Boolean
 
-               if (!editar){
-                pers.foto=R.drawable.descarga
+               if (editar){
+                   pers = bundle?.getSerializable("Person1") as Persona
+
+                   //Actualizamos o Insertamos los datos
+                   pers.nombre=user_name.toString()
+                   pers.user=user_id.toString()
+                   pers.password=password.toString()
+
+             }else{
+                  pers =Persona(user_id.toString(),password.toString(),user_name.toString(),R.drawable.descarga)
              }
 
             personas.addPersona(pers)

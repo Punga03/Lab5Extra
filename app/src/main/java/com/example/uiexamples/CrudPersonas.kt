@@ -151,6 +151,10 @@ class CrudPersonas : AppCompatActivity() {
             Toast.makeText(this, "Dentro del botón flotante", Toast.LENGTH_SHORT).show()
             Snackbar.make(view, "Botón para insertar", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
+
+            val i = Intent(this@CrudPersonas,DatosPersona::class.java)
+            i.putExtra("accion", false)
+            startActivity(i)
         }
 
 

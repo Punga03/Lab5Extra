@@ -17,4 +17,6 @@ class Persona : Serializable {
         this.foto = foto
     }
 
+    constructor()
+
 }
