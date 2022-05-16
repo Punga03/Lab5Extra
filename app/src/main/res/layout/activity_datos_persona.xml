@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.datosPersona">
+        tools:context=".DatosPersona">
     <LinearLayout
             android:id="@+id/ll_main_layout"
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:padding="30dp"
                 android:text="Informacion Personal"/>
         <EditText
-                android:id="@+id/et_personal_name"
+                android:id="@+id/et_personal_name1"
                 android:hint="Mi nombre"
                 android:textColor="#6bfff7"
                 android:textColorHint="#52afaa"
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         <EditText
-                android:id="@+id/et_user_name1"
+                android:id="@+id/et_user_id1"
                 android:textColor="#6bfff7"
                 android:textColorHint="#52afaa"
                 android:textAlignment="center"
@@ -52,13 +52,13 @@
                 android:padding="25dp"
                 android:orientation="horizontal">
             <Button
-                    android:id="@+id/btn_reset"
+                    android:id="@+id/btn_reset1"
                     android:text="Reset"
                     android:textAllCaps="false"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             <Button
-                    android:id="@+id/btn_submit"
+                    android:id="@+id/btn_submit1"
                     android:text="Submit"
                     android:textAllCaps="false"
                     android:layout_width="wrap_content"

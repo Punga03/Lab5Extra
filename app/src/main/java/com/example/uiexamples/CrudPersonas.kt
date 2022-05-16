@@ -1,5 +1,6 @@
 package com.example.uiexamples
 
+import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
@@ -24,6 +25,8 @@ import com.google.android.material.snackbar.Snackbar
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 import java.util.*
 import kotlin.collections.ArrayList
+
+
 
 class CrudPersonas : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -97,6 +100,13 @@ class CrudPersonas : AppCompatActivity() {
                         }else{
                             persona = Persona(personas.getPersonas()[position].user, personas.getPersonas()[position].password, personas.getPersonas()[position].nombre, personas.getPersonas()[position].foto)
                             archived.add(persona)
+                            val bundle = Bundle()
+
+                            val i = Intent(this@CrudPersonas,DatosPersona::class.java)
+
+                            i.putExtra("Editable", archived)
+                            // start your next activity
+
 
                             personas.deletePerson(position)
                             lista.adapter?.notifyItemRemoved(position)
@@ -108,6 +118,8 @@ class CrudPersonas : AppCompatActivity() {
                             }.show()
                             adaptador = RecyclerView_Adapter(personas.getPersonas())
                             lista.adapter = adaptador
+
+                            startActivity(i)
                             //getListOfPersons()
                         }
                     }

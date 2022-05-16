@@ -10,7 +10,7 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.UIExamples">
         <activity
-                android:name=".ui.datosPersona"
+                android:name=".DatosPersona"
                 android:exported="true"/>
         <activity android:name=".CrudPersonas"/>
         <activity
