@@ -104,7 +104,8 @@ class CrudPersonas : AppCompatActivity() {
 
                             val i = Intent(this@CrudPersonas,DatosPersona::class.java)
 
-                            i.putExtra("Editable", archived)
+                            i.putExtra("Person1", archived[0])
+                            i.putExtra("accion", true)
                             // start your next activity
 
 
